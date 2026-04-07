@@ -828,12 +828,12 @@
 
   </div><!-- end wrapper -->
 
-  <!-- FOOTER -->
+ <!-- FOOTER -->
   <footer>
     <div class="footer-name">Sriranga Gopikrishna <span>G</span></div>
     <div class="footer-copy">Oracle NetSuite Technical Consultant · Chennai, India</div>
   </footer>
-
+ 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Scroll reveal
     const observer = new IntersectionObserver((entries) => {
@@ -844,8 +844,15 @@
         }
       });
     }, { threshold: 0.12 });
-
+ 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
+ 
     // Stagger children
-    document.querySelectorAll('.skills-grid, .projects-grid, .edu-grid').forEach(
+    document.querySelectorAll('.skills-grid, .projects-grid, .edu-grid').forEach(grid => {
+      [...grid.children].forEach((child, i) => {
+        child.style.transitionDelay = `${i * 0.08}s`;
+      });
+    });
+  </script>
+</body>
+</html>
